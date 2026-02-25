@@ -1,4 +1,3 @@
-// src/components/Layout.tsx
 import { Outlet } from 'react-router-dom'
 
 export function Layout() {
@@ -18,10 +17,10 @@ export function Layout() {
         </a>
 
         <nav className="nav">
-          <a href="#about">about</a>
-          <a href="#experience">experience</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
           <a className="cta" href="#contact">
-            contact
+            Contact
           </a>
         </nav>
       </div>

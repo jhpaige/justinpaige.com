@@ -1,4 +1,3 @@
-// src/components/Section.tsx
 import type { ReactNode } from 'react'
 
 export function Section(props: { id: string; title: string; children: ReactNode }) {

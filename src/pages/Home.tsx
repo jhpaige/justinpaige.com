@@ -1,4 +1,3 @@
-// src/pages/Home.tsx
 import { Section } from '../components/Section'
 import { Timeline } from '../components/Timeline'
 

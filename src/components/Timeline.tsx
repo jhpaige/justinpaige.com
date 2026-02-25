@@ -1,4 +1,3 @@
-// src/components/Timeline.tsx
 type Item = {
   period: string
   title: string
