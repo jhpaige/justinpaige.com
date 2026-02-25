@@ -1,20 +1,14 @@
-import { Routes, Route, Navigate } from "react-router-dom"
-
-function Home() {
-  return <h1>Home</h1>
-}
-
-function About() {
-  return <h1>About</h1>
-}
+// src/App.tsx
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { Home } from './pages/Home'
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-
-      {/* redirect unknown routes */}
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
