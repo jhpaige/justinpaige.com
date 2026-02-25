@@ -25,30 +25,6 @@ export function Home() {
             the platform&apos;s full stack development, collaborating with UX/UI teams and integrating APIs for
             seamless functionality.
           </p>
-
-          <div className="ctaRow">
-            <a className="btn primary" href="#contact">
-              Contact
-            </a>
-            <a className="btn" href="#experience">
-              Experience
-            </a>
-            <a className="btn" href={linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </div>
-
-          <div className="miniNav">
-            <a className="miniLink" href="#about">
-              about
-            </a>
-            <a className="miniLink" href="#experience">
-              experience
-            </a>
-            <a className="miniLink" href="#contact">
-              contact
-            </a>
-          </div>
         </div>
 
         <div className="heroSide">
