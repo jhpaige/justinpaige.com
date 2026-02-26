@@ -1,27 +1,35 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export function Layout() {
   return (
-    <div className="appShell">
-      <div className="topbar">
+    <div className="min-h-screen">
+      <div className="sticky top-0 z-20 px-5 py-4.5 flex justify-between items-center gap-3 bg-linear-to-b from-[rgba(7,7,11,0.72)] to-[rgba(7,7,11,0.35)] backdrop-blur-md border-b border-white/8">
         <a
-          className="brand"
+          className="flex items-center gap-2.5 font-bold tracking-[0.2px]"
           href="#top"
           onClick={(e) => {
-            e.preventDefault()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <span className="brandMark" aria-hidden />
-          <span className="brandText">Justin Paige</span>
+          <span
+            className="w-3 h-3 rounded-[5px] bg-linear-to-br from-[#7c5cff] to-[#2de2e6] shadow-[0_0_25px_rgba(124,92,255,0.35)]"
+            aria-hidden
+          />
+          <span className="text-[14px]">Justin Paige</span>
         </a>
 
-        <nav className="nav">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a className="cta" href="#contact">
-            Contact
-          </a>
+        <nav className="flex gap-1.5 items-center text-[13px]">
+          <Button variant="ghost" size="sm" asChild>
+            <a href="#about">About</a>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <a href="#experience">Experience</a>
+          </Button>
+          <Button variant="accent" size="sm" asChild>
+            <a href="#contact">Contact</a>
+          </Button>
         </nav>
       </div>
 
@@ -29,5 +37,5 @@ export function Layout() {
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
