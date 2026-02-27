@@ -7,14 +7,10 @@ export function Layout() {
       <div className="sticky top-0 z-20 px-5 py-4.5 flex justify-between items-center gap-3 bg-linear-to-b from-[rgba(7,7,11,0.72)] to-[rgba(7,7,11,0.35)] backdrop-blur-md border-b border-white/8">
         <a
           className="flex items-center gap-3.5 font-bold tracking-[0.2px]"
-          href="#top"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          href="#"
         >
           <img src="/favicon.svg" className="w-7 h-7" alt="JP logo" />
-          <span className="text-[14px]">Justin Paige</span>
+          <span className="text-[14px] text-center">Justin Paige</span>
         </a>
 
         <nav className="flex gap-1.5 items-center text-[13px]">
