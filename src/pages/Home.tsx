@@ -3,14 +3,14 @@ import { Section } from "../components/Section";
 import { Timeline } from "../components/Timeline";
 import { Button } from "@/components/ui/button";
 
-const email = "you@justinpaige.com";
 const linkedin = "https://www.linkedin.com/in/justin-paige/";
 
 const inputBase =
   "rounded-xl border border-white/12 bg-black/18 text-white/90 px-2.5 py-2.5 text-sm outline-none focus:border-[rgba(124,92,255,0.55)] focus:shadow-[0_0_0_3px_rgba(124,92,255,0.16)]";
 
 export function Home() {
-  const contactHref = `mailto:${email}?subject=${encodeURIComponent("Hey Justin")}`;
+  const contactEmail = import.meta.env.VITE_CONTACT_TO_EMAIL;
+  const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Hey Justin")}`;
 
   return (
     <>
@@ -233,18 +233,43 @@ export function Home() {
 
           <form
             className="rounded-[18px] border border-white/10 bg-white/4 p-3.5"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              const fd = new FormData(e.currentTarget);
-              const name = String(fd.get("name") ?? "");
-              const from = String(fd.get("from") ?? "");
-              const message = String(fd.get("message") ?? "");
-              const body = `Name: ${name}\nEmail: ${from}\n\n${message}`;
-              window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-                "Website message",
-              )}&body=${encodeURIComponent(body)}`;
+              const form = e.currentTarget;
+              const fd = new FormData(form);
+
+              const payload = {
+                name: String(fd.get("name") ?? ""),
+                from: String(fd.get("from") ?? ""),
+                message: String(fd.get("message") ?? ""),
+                website: String(fd.get("website") ?? ""),
+              };
+
+              const r = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              });
+
+              const data = await r.json().catch(() => null);
+
+              if (!r.ok) {
+                console.error("Send failed:", r.status, data);
+                alert("Send failed — check console.");
+                return;
+              }
+
+              form.reset();
+              alert("Sent!");
             }}
           >
+            <input
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <label className="flex flex-col gap-1.5 mb-2.5 text-white/72 text-xs">
               <span>Name</span>
               <input
