@@ -39,7 +39,7 @@ export function Home() {
             Building responsive, scalable systems across the full stack.
           </h1>
 
-          <p className="text-white/74 max-w-[60ch] m-0 mb-4.5 text-[15px] leading-[1.6]">
+          <p className="text-white/74 m-0 mb-4.5 text-[15px] leading-[1.6]">
             At DraftKings, I contribute as a Senior Software Engineer
             integrating the Railbird Exchange infrastructure after our
             acquisition. As a founding engineer at Railbird, I was a core
@@ -49,7 +49,7 @@ export function Home() {
           </p>
         </div>
 
-        <div className="relative flex justify-end items-start max-[960px]:justify-start">
+        <div className="relative flex justify-end items-start max-[960px]:justify-center">
           <div className="w-full max-w-105 rounded-[26px] p-px bg-linear-to-br from-[rgba(124,92,255,0.55)] via-[rgba(45,226,230,0.25)] to-[rgba(255,255,255,0.06)] shadow-[0_18px_50px_rgba(0,0,0,0.45)]">
             <div className="rounded-[25px] bg-[rgba(8,8,12,0.65)] border border-white/8 backdrop-blur-[14px] p-4 relative overflow-hidden">
               <div className="flex justify-between items-center">
