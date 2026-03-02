@@ -1,7 +1,17 @@
+import { useState } from "react";
 import { LinkedInLogoIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import { Section } from "../components/Section";
 import { Timeline } from "../components/Timeline";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/dialog";
 
 const linkedin = "https://www.linkedin.com/in/justin-paige/";
 
@@ -9,6 +19,10 @@ const inputBase =
   "rounded-xl border border-white/12 bg-black/18 text-white/90 px-2.5 py-2.5 text-sm outline-none focus:border-[rgba(124,92,255,0.55)] focus:shadow-[0_0_0_3px_rgba(124,92,255,0.16)]";
 
 export function Home() {
+  const [dialog, setDialog] = useState<{ open: boolean; success: boolean }>({
+    open: false,
+    success: false,
+  });
   const contactEmail = import.meta.env.VITE_CONTACT_TO_EMAIL;
   const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Hey Justin")}`;
 
@@ -255,12 +269,12 @@ export function Home() {
 
               if (!r.ok) {
                 console.error("Send failed:", r.status, data);
-                alert("Send failed — check console.");
+                setDialog({ open: true, success: false });
                 return;
               }
 
               form.reset();
-              alert("Sent!");
+              setDialog({ open: true, success: true });
             }}
           >
             <input
@@ -308,6 +322,29 @@ export function Home() {
           </form>
         </div>
       </Section>
+
+      <Dialog
+        open={dialog.open}
+        onOpenChange={(open) => setDialog((d) => ({ ...d, open }))}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              {dialog.success ? "Message sent!" : "Something went wrong"}
+            </DialogTitle>
+            <DialogDescription>
+              {dialog.success
+                ? "Thanks for reaching out — I'll get back to you soon."
+                : `Your message couldn't be sent. Please try again or email me directly at ${contactEmail}.`}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button variant="accent">Got it</Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       <footer className="py-8 pb-12.5 px-5 border-t border-white/8 bg-black/14">
         <div className="max-w-280 mx-auto flex gap-2.5 items-center justify-center text-white/65 text-xs">
