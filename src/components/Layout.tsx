@@ -1,6 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import {
+  HamburgerMenuIcon,
+  LinkedInLogoIcon,
+  EnvelopeClosedIcon,
+} from '@radix-ui/react-icons';
+
+const linkedin = 'https://www.linkedin.com/in/justin-paige/';
 import avatarImg from '@/assets/avatar.jpg';
 
 export function Layout() {
@@ -18,7 +31,8 @@ export function Layout() {
           <span className="text-[14px] text-center">Justin Paige</span>
         </a>
 
-        <nav className="flex gap-1.5 items-center text-[13px]">
+        {/* Desktop nav */}
+        <nav className="hidden sm:flex gap-1.5 items-center text-[13px]">
           <Button variant="ghost" size="sm" asChild>
             <a href="#about">About</a>
           </Button>
@@ -29,6 +43,91 @@ export function Layout() {
             <a href="#contact">Contact</a>
           </Button>
         </nav>
+
+        {/* Mobile hamburger */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="ghost" size="sm" className="sm:hidden size-10.5">
+              <HamburgerMenuIcon className="w-5 h-5" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
+            <div className="flex flex-col items-center gap-6 pt-2">
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative w-16 h-16 rounded-full ring-2 ring-white/12 ring-offset-2 ring-offset-[#07070b] bg-[rgba(124,92,255,0.25)] flex items-center justify-center overflow-hidden shrink-0">
+                  <span className="text-white/80 font-semibold text-sm select-none">
+                    JP
+                  </span>
+                  <img
+                    src={avatarImg}
+                    alt="Justin Paige"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <span className="font-bold tracking-[0.2px] text-[15px] text-white/90">
+                  Justin Paige
+                </span>
+              </div>
+              <nav className="flex flex-col w-full gap-2">
+                <DialogClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-center"
+                    asChild
+                  >
+                    <a href="#about">About</a>
+                  </Button>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-center"
+                    asChild
+                  >
+                    <a href="#experience">Experience</a>
+                  </Button>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Button
+                    variant="accent"
+                    className="w-full justify-center"
+                    asChild
+                  >
+                    <a href="#contact">Contact</a>
+                  </Button>
+                </DialogClose>
+                <div className="flex">
+                  <DialogClose asChild>
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-center"
+                      asChild
+                    >
+                      <a href={linkedin} target="_blank" rel="noreferrer">
+                        <LinkedInLogoIcon className="w-3.5 h-3.5" />
+                        LinkedIn
+                      </a>
+                    </Button>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-center"
+                      asChild
+                    >
+                      <a
+                        href={`mailto:${import.meta.env.VITE_CONTACT_TO_EMAIL}?subject=${encodeURIComponent('Hey Justin')}`}
+                      >
+                        <EnvelopeClosedIcon className="w-3.5 h-3.5" />
+                        Email
+                      </a>
+                    </Button>
+                  </DialogClose>
+                </div>
+              </nav>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
 
       <main id="top">
