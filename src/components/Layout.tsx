@@ -14,7 +14,7 @@ import {
 } from '@radix-ui/react-icons';
 
 const linkedin = 'https://www.linkedin.com/in/justin-paige/';
-import avatarImg from '@/assets/avatar.jpg';
+import avatarImg from '@/assets/Avatar.jpg';
 
 export function Layout() {
   return (
