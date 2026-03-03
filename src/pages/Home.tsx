@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { LinkedInLogoIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons";
-import { Section } from "../components/Section";
-import { Timeline } from "../components/Timeline";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { LinkedInLogoIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons';
+import { Section } from '../components/Section';
+import { Timeline } from '../components/Timeline';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -11,12 +11,12 @@ import {
   DialogDescription,
   DialogFooter,
   DialogClose,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
-const linkedin = "https://www.linkedin.com/in/justin-paige/";
+const linkedin = 'https://www.linkedin.com/in/justin-paige/';
 
 const inputBase =
-  "rounded-xl border border-white/12 bg-black/18 text-white/90 px-2.5 py-2.5 text-sm outline-none focus:border-[rgba(124,92,255,0.55)] focus:shadow-[0_0_0_3px_rgba(124,92,255,0.16)]";
+  'rounded-xl border border-white/12 bg-black/18 text-white/90 px-2.5 py-2.5 text-sm outline-none focus:border-[rgba(124,92,255,0.55)] focus:shadow-[0_0_0_3px_rgba(124,92,255,0.16)]';
 
 export function Home() {
   const [dialog, setDialog] = useState<{ open: boolean; success: boolean }>({
@@ -24,7 +24,7 @@ export function Home() {
     success: false,
   });
   const contactEmail = import.meta.env.VITE_CONTACT_TO_EMAIL;
-  const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Hey Justin")}`;
+  const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent('Hey Justin')}`;
 
   return (
     <>
@@ -39,7 +39,7 @@ export function Home() {
               linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
               linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px)
             `,
-            backgroundSize: "auto, auto, 56px 56px, 56px 56px",
+            backgroundSize: 'auto, auto, 56px 56px, 56px 56px',
           }}
           aria-hidden
         />
@@ -135,14 +135,14 @@ export function Home() {
 
             <div className="flex flex-wrap gap-2 mt-3">
               {[
-                "TypeScript",
-                "React",
-                "SvelteKit",
-                "Node.js",
-                "PostgreSQL",
-                "NestJS",
-                "Storybook",
-                "D3",
+                'TypeScript',
+                'React',
+                'SvelteKit',
+                'Node.js',
+                'PostgreSQL',
+                'NestJS',
+                'Storybook',
+                'D3',
               ].map((t) => (
                 <span
                   key={t}
@@ -170,50 +170,50 @@ export function Home() {
         <Timeline
           items={[
             {
-              period: "Oct 2025 – Present",
-              title: "Senior Software Engineer",
-              org: "DraftKings",
+              period: 'Oct 2025 – Present',
+              title: 'Senior Software Engineer',
+              org: 'DraftKings',
               bullets: [
-                "Integrating Railbird Exchange infrastructure following acquisition.",
-                "Building production-critical React components and frontend infrastructure.",
-                "Designing serialization and data-mapping layers between backend services and UI systems.",
-                "Contributing to system investigations and architectural improvements to support operational efficiency.",
+                'Integrating Railbird Exchange infrastructure following acquisition.',
+                'Building production-critical React components and frontend infrastructure.',
+                'Designing serialization and data-mapping layers between backend services and UI systems.',
+                'Contributing to system investigations and architectural improvements to support operational efficiency.',
               ],
-              tech: ["React", "TypeScript", "Platform Integration"],
+              tech: ['React', 'TypeScript', 'Platform Integration'],
             },
             {
-              period: "Apr 2023 – Oct 2025",
-              title: "Founding Engineer / Software Engineer",
-              org: "Railbird",
+              period: 'Apr 2023 – Oct 2025',
+              title: 'Founding Engineer / Software Engineer',
+              org: 'Railbird',
               bullets: [
-                "Built multiple frontends from scratch using SvelteKit, including consumer platform and internal control panel.",
-                "Developed advanced UI components including animated modules, dynamic data tables, and charting with D3.",
-                "Collaborated with UX/UI teams and integrated APIs for seamless product functionality.",
-                "Implemented analytics instrumentation to measure user behavior and inform product decisions.",
+                'Built multiple frontends from scratch using SvelteKit, including consumer platform and internal control panel.',
+                'Developed advanced UI components including animated modules, dynamic data tables, and charting with D3.',
+                'Collaborated with UX/UI teams and integrated APIs for seamless product functionality.',
+                'Implemented analytics instrumentation to measure user behavior and inform product decisions.',
               ],
-              tech: ["SvelteKit", "Storybook", "D3", "Amplitude", "NestJS"],
+              tech: ['SvelteKit', 'Storybook', 'D3', 'Amplitude', 'NestJS'],
             },
             {
-              period: "Jul 2022 – Apr 2023",
-              title: "Engineer",
-              org: "Canopy (Open Source)",
+              period: 'Jul 2022 – Apr 2023',
+              title: 'Engineer',
+              org: 'Canopy (Open Source)',
               bullets: [
-                "Built a Chrome Manifest V3 developer tool for Svelte enabling time-travel debugging and component visualization.",
-                "Implemented extension messaging architecture for reliable state capture.",
-                "Used TypeScript to enforce type safety and maintainability.",
+                'Built a Chrome Manifest V3 developer tool for Svelte enabling time-travel debugging and component visualization.',
+                'Implemented extension messaging architecture for reliable state capture.',
+                'Used TypeScript to enforce type safety and maintainability.',
               ],
-              tech: ["Svelte", "TypeScript", "Chrome MV3"],
+              tech: ['Svelte', 'TypeScript', 'Chrome MV3'],
             },
             {
-              period: "Jun 2021 – Mar 2022",
-              title: "Software Engineer",
-              org: "Kwil",
+              period: 'Jun 2021 – Mar 2022',
+              title: 'Software Engineer',
+              org: 'Kwil',
               bullets: [
-                "Developed reusable React components for a scalable social platform.",
-                "Built Node.js backend integrations for decentralized storage systems.",
-                "Refactored legacy codebases for modularity and testability; added Jest testing.",
+                'Developed reusable React components for a scalable social platform.',
+                'Built Node.js backend integrations for decentralized storage systems.',
+                'Refactored legacy codebases for modularity and testability; added Jest testing.',
               ],
-              tech: ["React", "Node.js", "Jest"],
+              tech: ['React', 'Node.js', 'Jest'],
             },
           ]}
         />
@@ -253,22 +253,22 @@ export function Home() {
               const fd = new FormData(form);
 
               const payload = {
-                name: String(fd.get("name") ?? ""),
-                from: String(fd.get("from") ?? ""),
-                message: String(fd.get("message") ?? ""),
-                website: String(fd.get("website") ?? ""),
+                name: String(fd.get('name') ?? ''),
+                from: String(fd.get('from') ?? ''),
+                message: String(fd.get('message') ?? ''),
+                website: String(fd.get('website') ?? ''),
               };
 
-              const r = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
+              const r = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
               });
 
               const data = await r.json().catch(() => null);
 
               if (!r.ok) {
-                console.error("Send failed:", r.status, data);
+                console.error('Send failed:', r.status, data);
                 setDialog({ open: true, success: false });
                 return;
               }
@@ -330,7 +330,7 @@ export function Home() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>
-              {dialog.success ? "Message sent!" : "Something went wrong"}
+              {dialog.success ? 'Message sent!' : 'Something went wrong'}
             </DialogTitle>
             <DialogDescription>
               {dialog.success

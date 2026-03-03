@@ -1,5 +1,7 @@
-import { Outlet } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Outlet } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import avatarImg from '@/assets/avatar.jpg';
 
 export function Layout() {
   return (
@@ -9,7 +11,10 @@ export function Layout() {
           className="flex items-center gap-3.5 font-bold tracking-[0.2px]"
           href="#"
         >
-          <img src="/favicon.svg" className="w-7 h-7" alt="JP logo" />
+          <Avatar className="w-10 h-10 shrink-0 ring-2 ring-white/12 ring-offset-2 ring-offset-[#07070b]">
+            <AvatarImage src={avatarImg} alt="Justin Paige" />
+            <AvatarFallback>JP</AvatarFallback>
+          </Avatar>
           <span className="text-[14px] text-center">Justin Paige</span>
         </a>
 

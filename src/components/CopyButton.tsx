@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 export function CopyButton(props: { value: string; label: string }) {
   const [done, setDone] = useState(false);
@@ -13,7 +13,7 @@ export function CopyButton(props: { value: string; label: string }) {
         window.setTimeout(() => setDone(false), 900);
       }}
     >
-      {done ? "copied" : props.label}
+      {done ? 'copied' : props.label}
     </Button>
   );
 }
