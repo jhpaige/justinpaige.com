@@ -6,10 +6,17 @@ export function Section(props: {
   children: ReactNode;
 }) {
   return (
-    <section id={props.id} className="py-10.5 px-5 scroll-mt-10.5">
+    <section
+      id={props.id}
+      aria-labelledby={`${props.id}-heading`}
+      className="py-10.5 px-5 scroll-mt-10.5"
+    >
       <div className="max-w-280 mx-auto">
         <div className="flex items-center gap-3.5 mb-4">
-          <h2 className="m-0 text-lg tracking-widest uppercase text-white/78">
+          <h2
+            id={`${props.id}-heading`}
+            className="m-0 text-lg tracking-widest uppercase text-white/78"
+          >
             {props.title}
           </h2>
           <div

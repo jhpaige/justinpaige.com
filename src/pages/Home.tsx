@@ -103,13 +103,19 @@ export function Home() {
               <div className="flex gap-2.5 flex-wrap mt-3.5">
                 <Button variant="ghost" size="sm" asChild>
                   <a href={linkedin} target="_blank" rel="noreferrer">
-                    <LinkedInLogoIcon className="w-3.5 h-3.5" />
+                    <LinkedInLogoIcon
+                      aria-hidden="true"
+                      className="w-3.5 h-3.5"
+                    />
                     LinkedIn
                   </a>
                 </Button>
                 <Button variant="ghost" size="sm" asChild>
                   <a href={contactHref}>
-                    <EnvelopeClosedIcon className="w-3.5 h-3.5" />
+                    <EnvelopeClosedIcon
+                      aria-hidden="true"
+                      className="w-3.5 h-3.5"
+                    />
                     Email
                   </a>
                 </Button>
@@ -232,13 +238,19 @@ export function Home() {
             <div className="flex gap-2.5 flex-wrap mt-3.5">
               <Button asChild>
                 <a href={contactHref}>
-                  <EnvelopeClosedIcon className="w-3.5 h-3.5" />
+                  <EnvelopeClosedIcon
+                    aria-hidden="true"
+                    className="w-3.5 h-3.5"
+                  />
                   Email
                 </a>
               </Button>
               <Button asChild>
                 <a href={linkedin} target="_blank" rel="noreferrer">
-                  <LinkedInLogoIcon className="w-3.5 h-3.5" />
+                  <LinkedInLogoIcon
+                    aria-hidden="true"
+                    className="w-3.5 h-3.5"
+                  />
                   LinkedIn
                 </a>
               </Button>
