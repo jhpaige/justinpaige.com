@@ -348,9 +348,11 @@ export function Home() {
 
       <footer className="py-8 pb-12.5 px-5 border-t border-white/8 bg-black/14">
         <div className="max-w-280 mx-auto flex gap-2.5 items-center justify-center text-white/65 text-xs">
-          <span>© {new Date().getFullYear()} Justin Paige</span>
+          <span className="text-center">
+            © {new Date().getFullYear()} Justin Paige
+          </span>
           <span className="opacity-35">•</span>
-          <span className="font-mono">All Rights Reserved</span>
+          <span className="font-mono text-center">All Rights Reserved</span>
         </div>
       </footer>
     </>
