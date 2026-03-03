@@ -12,9 +12,9 @@ import {
   LinkedInLogoIcon,
   EnvelopeClosedIcon,
 } from '@radix-ui/react-icons';
+import avatarImg from '@/assets/Avatar.jpg';
 
 const linkedin = 'https://www.linkedin.com/in/justin-paige/';
-import avatarImg from '@/assets/Avatar.jpg';
 
 export function Layout() {
   return (
