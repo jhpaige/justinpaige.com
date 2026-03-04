@@ -12,6 +12,7 @@ import {
   DialogFooter,
   DialogClose,
 } from '@/components/ui/dialog';
+import { PerformanceLine } from '@/components/PerformanceLine';
 
 const linkedin = 'https://www.linkedin.com/in/justin-paige/';
 
@@ -61,6 +62,25 @@ export function Home() {
             collaborating with UX/UI teams and integrating APIs for seamless
             functionality.
           </p>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {[
+              'TypeScript',
+              'React',
+              'SvelteKit',
+              'Node.js',
+              'PostgreSQL',
+              'NestJS',
+              'Storybook',
+              'D3',
+            ].map((t) => (
+              <span
+                key={t}
+                className="px-2.5 py-1.75 rounded-full border border-white/12 bg-white/3 text-white/74 text-xs"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="relative flex justify-end items-start max-[960px]:justify-center">
@@ -127,46 +147,32 @@ export function Home() {
 
       {/* ── About ── */}
       <Section id="about" title="About">
-        <div className="grid grid-cols-[1.2fr_0.8fr] gap-4.5 max-[960px]:grid-cols-1">
+        <div className="grid grid-cols-[1.2fr_0.8fr] gap-4.5 items-stretch max-[960px]:grid-cols-1">
           <div>
             <h3 className="m-0 mb-2.5 text-2xl">Background</h3>
             <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
-              A graduate of the University of Southern California with a
-              Bachelor of Science in Mechanical Engineering and a minor in
-              Computer Programming, I bring a structured approach to software
-              development. My work reflects a commitment to building responsive,
-              scalable solutions while fostering alignment across engineering
-              and operations teams.
+              I’m a Senior Software Engineer focused on building high-leverage
+              frontend systems—components, patterns, and tooling that make teams
+              faster without sacrificing quality. I graduated from the
+              University of Southern California with a B.S. in Mechanical
+              Engineering and a minor in Computer Programming, and I still bring
+              that mindset to software: think in systems, reduce ambiguity, and
+              ship iteratively.
+              <br />
+              <br />
+              Most of my work lives at the intersection of product and
+              infrastructure: translating design into polished UI, integrating
+              APIs, and creating reliable data flows for real-time and
+              analytics-driven features. I care about performance,
+              accessibility, and consistency—the stuff users feel even when they
+              don’t notice it.
             </p>
-
-            <div className="flex flex-wrap gap-2 mt-3">
-              {[
-                'TypeScript',
-                'React',
-                'SvelteKit',
-                'Node.js',
-                'PostgreSQL',
-                'NestJS',
-                'Storybook',
-                'D3',
-              ].map((t) => (
-                <span
-                  key={t}
-                  className="px-2.5 py-1.75 rounded-full border border-white/12 bg-white/3 text-white/74 text-xs"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
           </div>
 
-          <div className="rounded-[18px] border border-white/10 bg-white/4 p-4">
-            <div className="text-[44px] opacity-35 leading-none">"</div>
-            <p className="m-0 -mt-2.5 mb-3 text-[15px] leading-[1.6] text-white/82">
-              I focus on building performant, reliable systems while keeping
-              engineering decisions aligned with product and operational needs.
-            </p>
-            <div className="text-white/60 text-xs">Justin Paige</div>
+          <div className="flex h-full items-stretch justify-center max-[960px]:h-65">
+            <div className="w-full max-[960px]:max-w-110">
+              <PerformanceLine height="fill" className="w-full h-full" />
+            </div>
           </div>
         </div>
       </Section>
