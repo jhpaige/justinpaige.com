@@ -144,7 +144,7 @@ export function PerformanceLine({
         .attr('text-anchor', 'middle')
         .attr('fill', 'rgba(255,255,255,0.75)')
         .attr('font-size', 12)
-        .text('Time Justin was there');
+        .text('Time I was there');
 
       g.append('text')
         .attr('transform', 'rotate(-90)')
