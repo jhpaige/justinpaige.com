@@ -57,8 +57,8 @@ export function Home() {
           </h1>
 
           <p className="text-white/74 m-0 mb-4.5 text-[15px] leading-[1.6]">
-            I’ve built from scratch in high-stakes environments — regulated
-            markets, live trading — and contributed to large, established
+            I’ve built from scratch in high-stakes environments like regulated
+            markets and live trading, and contributed to large, established
             systems where performance and reliability are non-negotiable. That
             range shapes how I think about software: the interfaces that feel
             solid, the data layers that stay clean, and the systems that hold up
