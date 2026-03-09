@@ -82,8 +82,8 @@
   <text x="80" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="white" opacity="0.96" letter-spacing="-1.5">Justin Paige</text>
 
   <!-- Tagline -->
-  <text x="80" y="356" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="white" opacity="0.60">Designing and building scalable products</text>
-  <text x="80" y="386" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="white" opacity="0.60">from interface to infrastructure.</text>
+  <text x="80" y="356" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="white" opacity="0.60">Founding engineer on a YC-backed trading platform,</text>
+  <text x="80" y="386" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="white" opacity="0.60">acquired by DraftKings.</text>
 
   <!-- Divider -->
   <rect x="80" y="418" width="480" height="1" fill="url(#pill-grad)" opacity="0.3"/>

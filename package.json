@@ -12,7 +12,8 @@
     "format": "prettier . --write",
     "preview": "vite preview",
     "prepare": "husky",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "social": "node -e \"const {Resvg}=require('@resvg/resvg-js'),fs=require('fs');const r=new Resvg(fs.readFileSync('public/social.svg','utf8'),{fitTo:{mode:'width',value:1200}});fs.writeFileSync('public/social.png',r.render().asPng());console.log('social.png updated')\""
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@resvg/resvg-js": "^2.6.2",
     "@types/d3": "^7.4.3",
     "@types/node": "^24.11.0",
     "@types/react": "^19.2.7",
@@ -55,6 +57,9 @@
     ],
     "*.{ts,tsx,js,jsx}": [
       "eslint --fix --max-warnings 0"
+    ],
+    "public/social.svg": [
+      "npm run social"
     ]
   }
 }
