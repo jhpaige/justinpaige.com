@@ -1,24 +1,56 @@
 # justinpaige.com
 
-Personal portfolio site. Built with React, TypeScript, Vite, and Tailwind CSS.
+Personal portfolio site for Justin Paige — Senior Software Engineer.
 
 ## Stack
 
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS v4
-- React Router
+| Layer         | Technology      |
+| ------------- | --------------- |
+| Framework     | React 19        |
+| Language      | TypeScript      |
+| Bundler       | Vite 7          |
+| Styling       | Tailwind CSS v4 |
+| Routing       | React Router v7 |
+| UI Primitives | Radix UI        |
+| Data Viz      | D3 v7           |
+| Deployment    | Vercel          |
+| Email         | Resend          |
+
+## Routes
+
+| Route | Description                             |
+| ----- | --------------------------------------- |
+| `/`   | Home — hero, about, experience, contact |
+| `/*`  | Redirects to `/`                        |
+
+**API (Vercel serverless)**
+
+| Method | Path           | Description                   |
+| ------ | -------------- | ----------------------------- |
+| `POST` | `/api/contact` | Sends contact form via Resend |
 
 ## Dev
 
 ```bash
 npm install
-npm run dev
+npm run dev    # Vite dev server (no API routes)
+npm run start  # Vercel dev — use this if testing the contact form
 ```
 
-## Build
+## Env vars
+
+The site works without these except where noted.
+
+| Variable                | Required for                         |
+| ----------------------- | ------------------------------------ |
+| `VITE_CONTACT_TO_EMAIL` | mailto link + contact form recipient |
+| `RESEND_API_KEY`        | Contact form sending                 |
+| `CONTACT_FROM_EMAIL`    | Contact form sender address          |
+
+Create a `.env` file at the root to set these locally:
 
 ```bash
-npm run build
+VITE_CONTACT_TO_EMAIL=you@example.com
+RESEND_API_KEY=re_...
+CONTACT_FROM_EMAIL=noreply@yourdomain.com
 ```

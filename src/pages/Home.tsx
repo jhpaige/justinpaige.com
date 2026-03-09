@@ -62,7 +62,10 @@ export function Home() {
             exchange platform end-to-end, collaborating with UX/UI teams and
             integrating APIs to power a seamless trading experience.
           </p>
-          <div className="flex flex-wrap gap-2 mt-3">
+          <ul
+            aria-label="Core technologies"
+            className="flex flex-wrap gap-2 mt-3 list-none p-0 m-0"
+          >
             {[
               'TypeScript',
               'React',
@@ -73,14 +76,14 @@ export function Home() {
               'Storybook',
               'D3',
             ].map((t) => (
-              <span
+              <li
                 key={t}
                 className="px-2.5 py-1.75 rounded-full border border-white/12 bg-white/3 text-white/74 text-xs"
               >
                 {t}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         <div className="relative flex justify-end items-start max-[960px]:justify-center">

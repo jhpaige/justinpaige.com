@@ -8,9 +8,9 @@ type Item = {
 
 export function Timeline(props: { items: Item[] }) {
   return (
-    <div className="grid gap-3.5">
+    <ol className="grid gap-3.5 list-none p-0 m-0">
       {props.items.map((it, index) => (
-        <div
+        <li
           key={it.period + it.title}
           className="grid grid-cols-[22px_1fr] gap-3"
         >
@@ -40,19 +40,19 @@ export function Timeline(props: { items: Item[] }) {
               ))}
             </ul>
 
-            <div className="mt-3 flex flex-wrap gap-2">
+            <ul className="mt-3 flex flex-wrap gap-2 list-none p-0 m-0">
               {it.tech.map((t) => (
-                <span
+                <li
                   key={t}
                   className="inline-flex items-center rounded-full border border-white/10 bg-white/3 px-2.5 py-1.5 text-[11px] text-white/62"
                 >
                   {t}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ol>
   );
 }

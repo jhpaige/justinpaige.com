@@ -46,7 +46,10 @@ export function Layout() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden sm:flex gap-1.5 items-center text-[13px]">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden sm:flex gap-1.5 items-center text-[13px]"
+        >
           <Button variant="ghost" size="sm" asChild>
             <a href="#about">About</a>
           </Button>
@@ -79,7 +82,10 @@ export function Layout() {
           >
             <DialogTitle className="sr-only">Navigation</DialogTitle>
             <span ref={sentinelRef} tabIndex={-1} className="sr-only" />
-            <nav className="flex flex-col w-full gap-2">
+            <nav
+              aria-label="Mobile navigation"
+              className="flex flex-col w-full gap-2"
+            >
               <DialogClose asChild>
                 <a
                   href="#"
