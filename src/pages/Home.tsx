@@ -52,8 +52,8 @@ export function Home() {
 
           {/* Note: if you update this headline, also update public/social.svg */}
           <h1 className="text-[clamp(30px,3.2vw,46px)] leading-[1.05] m-0 mb-3.5 tracking-[-0.02em]">
-            Founding engineer on a YC-backed trading platform acquired by
-            DraftKings. Now building the platform that brings it all together.
+            Founding engineer at Railbird Exchange, acquired by DraftKings. Now
+            building the platform that brings it all together.
           </h1>
 
           <p className="text-white/74 m-0 mb-4.5 text-[15px] leading-[1.6]">
