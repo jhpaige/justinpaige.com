@@ -273,7 +273,7 @@ export function Home() {
             },
             {
               period: 'Apr 2023 – Oct 2025',
-              title: 'Founding Engineer',
+              title: 'Founding Software Engineer',
               org: 'Railbird',
               bullets: [
                 'Built the consumer platform and internal control panel from the ground up.',
@@ -285,7 +285,7 @@ export function Home() {
             },
             {
               period: 'Jul 2022 – Apr 2023',
-              title: 'Engineer',
+              title: 'Software Engineer',
               org: 'Canopy (Open Source)',
               bullets: [
                 'Built a Chrome Manifest V3 developer tool for Svelte with time-travel debugging and component visualization.',
