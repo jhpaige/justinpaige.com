@@ -22,7 +22,8 @@ export function PerformanceLine({
 }) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
-  const rafRef = useRef<number | null>(null);
+  const hoverRafRef = useRef<number | null>(null);
+  const resizeRafRef = useRef<number | null>(null);
   const mountedRef = useRef(true);
 
   const [hover, setHover] = useState<Hover | null>(null);
@@ -71,12 +72,19 @@ export function PerformanceLine({
     const wrapEl = wrapRef.current;
     if (!svgEl || !wrapEl) return;
 
+    const measureEl =
+      height === 'fill'
+        ? (wrapEl.parentElement?.parentElement ??
+          wrapEl.parentElement ??
+          wrapEl)
+        : wrapEl;
+
     const svg = d3.select(svgEl);
 
     let ro: ResizeObserver | null = null;
 
     const render = (w?: number, h?: number) => {
-      const rect = wrapEl.getBoundingClientRect();
+      const rect = measureEl.getBoundingClientRect();
       const measuredWidth = Math.max(1, Math.floor(w ?? rect.width));
       const measuredHeight =
         height === 'fill'
@@ -93,9 +101,15 @@ export function PerformanceLine({
       svg.selectAll('*').remove();
 
       svg.attr('viewBox', `0 0 ${measuredWidth} ${measuredHeight}`);
-      svg.attr('preserveAspectRatio', 'xMidYMid meet');
-      svg.attr('width', measuredWidth);
-      svg.attr('height', measuredHeight);
+      svg.attr('preserveAspectRatio', 'none');
+
+      if (height !== 'fill') {
+        svg.attr('width', measuredWidth);
+        svg.attr('height', measuredHeight);
+      } else {
+        svg.attr('width', null);
+        svg.attr('height', null);
+      }
 
       const margin = { top: 46, right: 16, bottom: 50, left: 60 };
       const innerW = measuredWidth - margin.left - margin.right;
@@ -224,15 +238,22 @@ export function PerformanceLine({
 
       overlay
         .on('mousemove', (event: MouseEvent) => {
-          if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
-          rafRef.current = requestAnimationFrame(() => {
+          if (hoverRafRef.current != null) {
+            cancelAnimationFrame(hoverRafRef.current);
+          }
+
+          hoverRafRef.current = requestAnimationFrame(() => {
             const [mx] = d3.pointer(event, overlayNode);
             setHoverFromX(mx);
           });
         })
         .on('mouseleave', () => {
-          if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
-          rafRef.current = null;
+          if (hoverRafRef.current != null) {
+            cancelAnimationFrame(hoverRafRef.current);
+          }
+
+          hoverRafRef.current = null;
+
           if (mountedRef.current) setHover(null);
         });
 
@@ -240,8 +261,12 @@ export function PerformanceLine({
         .on('touchstart', (event: TouchEvent) => {
           const tt = event.touches[0];
           if (!tt) return;
-          if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
-          rafRef.current = requestAnimationFrame(() => {
+
+          if (hoverRafRef.current != null) {
+            cancelAnimationFrame(hoverRafRef.current);
+          }
+
+          hoverRafRef.current = requestAnimationFrame(() => {
             const [mx] = d3.pointer(tt, overlayNode);
             setHoverFromX(mx);
           });
@@ -249,15 +274,23 @@ export function PerformanceLine({
         .on('touchmove', (event: TouchEvent) => {
           const tt = event.touches[0];
           if (!tt) return;
-          if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
-          rafRef.current = requestAnimationFrame(() => {
+
+          if (hoverRafRef.current != null) {
+            cancelAnimationFrame(hoverRafRef.current);
+          }
+
+          hoverRafRef.current = requestAnimationFrame(() => {
             const [mx] = d3.pointer(tt, overlayNode);
             setHoverFromX(mx);
           });
         })
         .on('touchend', () => {
-          if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
-          rafRef.current = null;
+          if (hoverRafRef.current != null) {
+            cancelAnimationFrame(hoverRafRef.current);
+          }
+
+          hoverRafRef.current = null;
+
           if (mountedRef.current) setHover(null);
         });
 
@@ -280,11 +313,11 @@ export function PerformanceLine({
     };
 
     const schedule = (w?: number, h?: number) => {
-      if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
+      if (resizeRafRef.current != null) {
+        cancelAnimationFrame(resizeRafRef.current);
+      }
 
-      if (mountedRef.current) setHover(null);
-
-      rafRef.current = requestAnimationFrame(() => render(w, h));
+      resizeRafRef.current = requestAnimationFrame(() => render(w, h));
     };
 
     schedule();
@@ -296,12 +329,21 @@ export function PerformanceLine({
       schedule(cr.width, cr.height);
     });
 
-    ro.observe(wrapEl);
+    ro.observe(measureEl);
 
     return () => {
       if (ro) ro.disconnect();
-      if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
+
+      if (hoverRafRef.current != null) {
+        cancelAnimationFrame(hoverRafRef.current);
+      }
+
+      if (resizeRafRef.current != null) {
+        cancelAnimationFrame(resizeRafRef.current);
+      }
+
+      hoverRafRef.current = null;
+      resizeRafRef.current = null;
     };
   }, [data, height, subtitle, title]);
 

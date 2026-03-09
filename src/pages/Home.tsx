@@ -30,7 +30,7 @@ export function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <header className="max-w-280 mx-auto px-5 pt-14 pb-4.5 grid grid-cols-[1.35fr_0.95fr] gap-4.5 relative max-[960px]:grid-cols-1 max-[960px]:pt-9.5">
+      <header className="max-w-280 mx-auto px-5 pt-14 pb-4.5 grid grid-cols-[1.45fr_0.85fr] gap-4.5 relative max-[960px]:grid-cols-1 max-[960px]:pt-9.5">
         <div
           className="absolute -inset-0.5 rounded-[28px] pointer-events-none opacity-90 mask-[radial-gradient(closest-side,rgba(0,0,0,0.9),transparent_70%)]"
           style={{
@@ -47,20 +47,20 @@ export function Home() {
 
         <div className="relative py-1.5">
           <p className="text-white/75 text-xs tracking-[0.18em] uppercase m-0 mb-3.5">
-            Senior Software Engineer • React • SvelteKit • TypeScript
+            Senior Software Engineer • Frontend Systems • Platform Integration
           </p>
 
-          <h1 className="text-[clamp(30px,3.2vw,52px)] leading-[1.05] m-0 mb-3.5 tracking-[-0.02em]">
-            Building responsive, scalable systems across the full stack.
+          <h1 className="text-[clamp(30px,3.2vw,46px)] leading-[1.05] m-0 mb-3.5 tracking-[-0.02em]">
+            Designing and building scalable products from interface to
+            infrastructure.
           </h1>
 
           <p className="text-white/74 m-0 mb-4.5 text-[15px] leading-[1.6]">
-            At DraftKings, I contribute as a Senior Software Engineer
-            integrating the Railbird Exchange infrastructure after our
-            acquisition. As a founding engineer at Railbird, I was a core
-            contributor to the platform&apos;s full stack development,
-            collaborating with UX/UI teams and integrating APIs for seamless
-            functionality.
+            I’m a Senior Software Engineer at DraftKings working on the DK
+            Predict platform following the acquisition of my company, Railbird
+            Exchange. As a founding engineer at Railbird, I helped build the
+            exchange platform end-to-end, collaborating with UX/UI teams and
+            integrating APIs to power a seamless trading experience.
           </p>
           <div className="flex flex-wrap gap-2 mt-3">
             {[
@@ -146,33 +146,108 @@ export function Home() {
       </header>
 
       {/* ── About ── */}
-      <Section id="about" title="About">
-        <div className="grid grid-cols-[1.2fr_0.8fr] gap-4.5 items-stretch max-[960px]:grid-cols-1">
-          <div>
-            <h3 className="m-0 mb-2.5 text-2xl">Background</h3>
-            <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
-              I’m a Senior Software Engineer focused on building high-leverage
-              frontend systems—components, patterns, and tooling that make teams
-              faster without sacrificing quality. I graduated from the
-              University of Southern California with a B.S. in Mechanical
-              Engineering and a minor in Computer Programming, and I still bring
-              that mindset to software: think in systems, reduce ambiguity, and
-              ship iteratively.
-              <br />
-              <br />
-              Most of my work lives at the intersection of product and
-              infrastructure: translating design into polished UI, integrating
-              APIs, and creating reliable data flows for real-time and
-              analytics-driven features. I care about performance,
-              accessibility, and consistency—the stuff users feel even when they
-              don’t notice it.
-            </p>
+      <Section id="about" title="How I Got Here">
+        <div className="text-white/72 leading-[1.7] text-[14.5px]">
+          <div className="hidden min-[961px]:float-right min-[961px]:ml-5 min-[961px]:mb-3 min-[961px]:block min-[961px]:w-96">
+            <PerformanceLine height={340} className="w-full" />
           </div>
 
-          <div className="flex h-full items-stretch justify-center max-[960px]:h-65">
-            <div className="w-full max-[960px]:max-w-110">
-              <PerformanceLine height="fill" className="w-full h-full" />
-            </div>
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            I started my engineering journey studying Mechanical Engineering at
+            the <strong>University of Southern California</strong>. I’d always
+            been interested in systems, design, and the artistic process of
+            building things, but it didn’t fully click that software was my
+            niche until the end of college.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            In high school I channeled that energy through the engineering
+            magnet program at my school and through music. I studied and
+            practiced mixing, started DJing events, including a regular gig at
+            my local trampoline park, and ended up doing that professionally
+            through much of college. It was a weird mix of creativity,
+            engineering, and figuring things out as I went. I also spent plenty
+            of time playing video games and tinkering with computers, but I
+            wasn’t writing much code yet.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            Once I got to USC it felt like opportunities were everywhere. I
+            spent some time working with the <strong>USC Racing team</strong>,
+            using <strong>CATIA</strong> to design components for our mini-F1
+            combustion vehicle. It was exciting to take real-world testing
+            feedback and turn it into new designs, but something still felt
+            slightly off. I enjoyed Mechanical Engineering, but I enjoyed my
+            programming classes more—so I added a{' '}
+            <strong>Computer Programming minor</strong>.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            My first real software opportunity came when a friend raised funding
+            to build a decentralized social media platform called{' '}
+            <strong>Kwil</strong>. I learned <strong>React</strong>,{' '}
+            <strong>Node</strong>, and <strong>JavaScript</strong> while working
+            on the project through the end of my junior year and into my senior
+            year. At that point I knew I wanted to pursue software seriously.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            Around that time Kwil moved its team to Austin while I stayed in
+            Southern California. That gave me the chance to double down on my
+            fundamentals through <strong>Codesmith</strong>, where I focused on
+            developing a more professional engineering workflow.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            While I was there I discovered <strong>Svelte</strong>, and near the
+            end of the program I started working on an open-source devtool with
+            a few engineers I met there.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            The project, <strong>Canopy</strong>, ended up getting some traction
+            in the community, but after a few months I needed to find full-time
+            work. That search ultimately led me to a new{' '}
+            <strong>event contracts startup</strong> backed by{' '}
+            <strong>Y Combinator—Railbird Exchange</strong>.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            At <strong>Railbird</strong>, I spent several years helping build
+            the platform from the ground up: frontends, APIs, and the internal
+            systems needed to operate in a regulated environment while pursuing
+            approval from the <strong>CFTC</strong>. When I first started
+            working there I remember trying to explain{' '}
+            <strong>event contracts</strong> to people and almost no one had
+            heard of them. Watching that industry grow—and getting to contribute
+            to it through my work—has been an incredible experience.
+          </p>
+
+          <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
+            Railbird was eventually acquired by <strong>DraftKings</strong>,
+            where I now work as a <strong>Senior Software Engineer</strong>{' '}
+            helping scale, monitor, and develop the <strong>DK Predict</strong>{' '}
+            platform.
+          </p>
+
+          <p className="m-0 text-white/72 leading-[1.7] text-[14.5px]">
+            Today my work focuses on designing frontend systems, integrating
+            complex APIs, and making sure data flows cleanly between services
+            and the UI. I care a lot about the details that make software feel
+            solid—performance, consistency, and systems that hold up under real
+            usage.
+          </p>
+
+          <p className="m-0 mt-3 text-white/72 leading-[1.7] text-[14.5px]">
+            Lately I’ve also been experimenting with AI-assisted development
+            workflows, exploring how these tools can speed up engineering while
+            still keeping systems understandable and maintainable.
+          </p>
+
+          <div className="clear-both" />
+
+          <div className="mt-4 min-[961px]:hidden">
+            <PerformanceLine height={320} className="w-full" />
           </div>
         </div>
       </Section>
@@ -186,22 +261,22 @@ export function Home() {
               title: 'Senior Software Engineer',
               org: 'DraftKings',
               bullets: [
-                'Integrating Railbird Exchange infrastructure following acquisition.',
-                'Building production-critical React components and frontend infrastructure.',
+                'Integrating the DK Predict platform following the Railbird acquisition.',
+                'Building production-critical React components and shared frontend infrastructure.',
                 'Designing serialization and data-mapping layers between backend services and UI systems.',
-                'Contributing to system investigations and architectural improvements to support operational efficiency.',
+                'Investigating production issues and contributing architectural improvements that support operational scale.',
               ],
               tech: ['React', 'TypeScript', 'Platform Integration'],
             },
             {
               period: 'Apr 2023 – Oct 2025',
-              title: 'Founding Engineer / Software Engineer',
+              title: 'Founding Engineer',
               org: 'Railbird',
               bullets: [
-                'Built multiple frontends from scratch using SvelteKit, including consumer platform and internal control panel.',
-                'Developed advanced UI components including animated modules, dynamic data tables, and charting with D3.',
-                'Collaborated with UX/UI teams and integrated APIs for seamless product functionality.',
-                'Implemented analytics instrumentation to measure user behavior and inform product decisions.',
+                'Built the consumer platform and internal control panel from the ground up.',
+                'Developed frontend systems including animated modules, dynamic data tables, and charting with D3.',
+                'Worked closely with product and design to turn complex trading workflows into intuitive interfaces.',
+                'Implemented analytics instrumentation to measure user behavior and guide product decisions.',
               ],
               tech: ['SvelteKit', 'Storybook', 'D3', 'Amplitude', 'NestJS'],
             },
@@ -210,9 +285,9 @@ export function Home() {
               title: 'Engineer',
               org: 'Canopy (Open Source)',
               bullets: [
-                'Built a Chrome Manifest V3 developer tool for Svelte enabling time-travel debugging and component visualization.',
-                'Implemented extension messaging architecture for reliable state capture.',
-                'Used TypeScript to enforce type safety and maintainability.',
+                'Built a Chrome Manifest V3 developer tool for Svelte with time-travel debugging and component visualization.',
+                'Designed the extension messaging architecture to reliably capture application state.',
+                'Used TypeScript to improve reliability and maintainability across the codebase.',
               ],
               tech: ['Svelte', 'TypeScript', 'Chrome MV3'],
             },
@@ -222,8 +297,8 @@ export function Home() {
               org: 'Kwil',
               bullets: [
                 'Developed reusable React components for a scalable social platform.',
-                'Built Node.js backend integrations for decentralized storage systems.',
-                'Refactored legacy codebases for modularity and testability; added Jest testing.',
+                'Built Node.js integrations for decentralized storage systems.',
+                'Refactored legacy code to improve modularity, testability, and maintainability.',
               ],
               tech: ['React', 'Node.js', 'Jest'],
             },
@@ -237,7 +312,7 @@ export function Home() {
           <div>
             <h3 className="m-0 mb-2.5 text-2xl">Say hello.</h3>
             <p className="m-0 mb-3 text-white/72 leading-[1.7] text-[14.5px]">
-              Interested in collaborating or discussing opportunities. Reach out
+              Interested in collaborating or discussing opportunities? Reach out
               directly.
             </p>
 
