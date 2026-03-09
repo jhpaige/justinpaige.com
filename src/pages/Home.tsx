@@ -57,11 +57,12 @@ export function Home() {
           </h1>
 
           <p className="text-white/74 m-0 mb-4.5 text-[15px] leading-[1.6]">
-            I’m a Senior Software Engineer at DraftKings working on the DK
-            Predict platform following the acquisition of my company, Railbird
-            Exchange. As a founding engineer at Railbird, I helped build the
-            exchange platform end-to-end, collaborating with UX/UI teams and
-            integrating APIs to power a seamless trading experience.
+            I’ve built from scratch in high-stakes environments — regulated
+            markets, live trading — and contributed to large, established
+            systems where performance and reliability are non-negotiable. That
+            range shapes how I think about software: the interfaces that feel
+            solid, the data layers that stay clean, and the systems that hold up
+            when it counts.
           </p>
           <ul
             aria-label="Core technologies"
